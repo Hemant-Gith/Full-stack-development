@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin_padding</title>
+    <style>
+        button{
+            background-color: green;
+            border: none;
+            cursor: pointer;
+        }
+        .a{
+            margin :10px;
+            padding: 5px;
+        }
+        .Stret{
+            transition: height 0.5s,width 0.5s;
+            margin :10px;
+            padding: 5px;
+            width: 100px;
+            height: 30px;
+        }
+       .Stret:hover{
+            width: 200px;
+            height : 60px;
+       }
+       .Shad{
+            transition: box-shadow 0.3s;
+            margin :10px;
+            padding: 5px;
+       }
+       .Shad:hover{
+            box-shadow: 3px 3px 3px rgba(224, 13, 13,0.5);
+       }
+
+       .s{
+            border: solid;
+            background-color: gray;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="a">One</button>
+        <button class="a">Two</button>
+        <button class="a">Three</button>
+    </div>
+
+    <div>
+        <button class="Stret">Stretch</button>
+        <button class="Shad">Shadow</button>
+    </div>
+    <div>
+        <button class="s">Back</button>
+        <a href = "">1</a>
+        <a href = "">2</a>
+        <a href = "">3</a>
+        <a href = "">5</a>
+        <a href = "">6</a>
+        <button class="s">Next</button>
+    </div>
+
+</body>
+</html>
