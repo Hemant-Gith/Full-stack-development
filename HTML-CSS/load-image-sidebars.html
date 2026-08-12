@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Exercises 7d - 7g</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            margin: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 20px;
+        }
+
+        .heading {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* ---------------- 7d ---------------- */
+
+        .search-rounded {
+            width: 330px;
+            height: 65px;
+            font-size: 24px;
+            padding-left: 25px;
+
+            border: 1px solid rgb(190, 190, 190);
+            border-radius: 12px;
+        }
+
+
+        /* ---------------- 7e ---------------- */
+
+        .search-shadow {
+            width: 650px;
+            height: 55px;
+            font-size: 20px;
+            padding-left: 25px;
+
+            border: none;
+            border-radius: 30px;
+
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* ---------------- 7f ---------------- */
+
+        .linkedin-box {
+            background-color: white;
+            color: rgb(50, 50, 50);
+            width: 500px;
+            padding: 10px;
+        }
+
+        .email-label {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .email-input {
+            width: 95%;
+            height: 40px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .privacy {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .agree-button {
+            width: 100%;
+            height: 70px;
+
+            background-color: rgb(50, 110, 200);
+            color: white;
+
+            border: none;
+            border-radius: 35px;
+
+            font-size: 25px;
+        }
+
+
+        /* ---------------- 7g ---------------- */
+
+        .twitter-box {
+            width: 650px;
+            height: 80px;
+
+            background-color: white;
+            color: rgb(80, 80, 80);
+
+            display: flex;
+            align-items: center;
+
+            padding: 10px;
+        }
+
+        .profile {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            background-color: lightgray;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 35px;
+
+            margin-right: 20px;
+        }
+
+        .tweet-text {
+            font-size: 25px;
+            flex: 1;
+        }
+
+        .tweet-button {
+            background-color: rgb(70, 160, 230);
+            color: white;
+
+            border: none;
+            border-radius: 30px;
+
+            padding: 12px 25px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- 7d -->
+        <div class="exercise">
+
+            <div class="heading">
+                7d. With rounded corners
+            </div>
+
+            <input
+                class="search-rounded"
+                type="text"
+                placeholder="Search"
+            >
+
+        </div>
+
+
+        <!-- 7e -->
+        <div class="exercise">
+
+            <div class="heading">
+                7e. With a shadow, and no border
+            </div>
+
+            <input
+                class="search-shadow"
+                type="text"
+                placeholder="Search Google or type a URL"
+            >
+
+        </div>
+
+
+        <!-- 7f -->
+        <div class="exercise">
+
+            <div class="heading">
+                7f. LinkedIn signup
+            </div>
+
+            <div class="linkedin-box">
+
+                <div class="email-label">
+                    Email
+                </div>
+
+                <input
+                    class="email-input"
+                    type="email"
+                >
+
+                <div class="privacy">
+                    By clicking Agree & Join, you agree to the Privacy Policy.
+                </div>
+
+                <button class="agree-button">
+                    Agree & Join
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7g -->
+        <div class="exercise">
+
+            <div class="heading">
+                7g. Twitter text box
+            </div>
+
+            <div class="twitter-box">
+
+                <div class="profile">
+                    🐱
+                </div>
+
+                <div class="tweet-text">
+                    What's happening?
+                </div>
+
+                <button class="tweet-button">
+                    Tweet
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
