@@ -1,0 +1,68 @@
+/* =========================
+   VIDEO CARD
+========================= */
+
+.video-card {
+
+    min-width: 0;
+
+    cursor: pointer;
+}
+
+
+/* Thumbnail */
+
+.thumbnail {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #dddddd;
+
+    border-radius: 10px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Placeholder thumbnail */
+
+.thumbnail-text {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* Video duration */
+
+.duration {
+
+    position: absolute;
+
+    bottom: 7px;
+    right: 7px;
+
+    background: rgba(0,0,0,0.8);
+
+    color: white;
+
+    padding: 3px 5px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+}
+
+

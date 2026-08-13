@@ -1,0 +1,42 @@
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar-item {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .sidebar-item span:not(.sidebar-icon) {
+        display: none;
+    }
+
+    .sidebar-heading {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 80px;
+    }
+
+    .video-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .logo {
+        margin-left: 5px;
+    }
+
+    .search-container {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+}
+
+
+/* Mobile */
+

@@ -1,0 +1,72 @@
+/* =========================
+   VIDEO INFORMATION
+========================= */
+
+.video-info {
+
+    display: flex;
+
+    margin-top: 12px;
+
+    gap: 12px;
+}
+
+
+/* Profile image */
+
+.channel-image {
+
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    border-radius: 50%;
+
+    background: #cccccc;
+}
+
+
+/* Text */
+
+.video-details {
+
+    min-width: 0;
+}
+
+.video-title {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+.channel-name {
+
+    font-size: 13px;
+
+    color: #606060;
+
+    margin-top: 7px;
+}
+
+.video-stats {
+
+    font-size: 13px;
+
+    color: #606060;
+
+    margin-top: 3px;
+}
+
+
