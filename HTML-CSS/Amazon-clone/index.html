@@ -3,34 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Clone - Halfway</title>
-  <link rel="stylesheet" href="css/nav.css">
+  <title>Amazon Clone</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
+  <header class="top-header">
+    <div class="logo">amazon<span>.in</span></div>
+    <div class="location">
+      <small>Delivering to Delhi 110001</small>
+      <strong>Update location</strong>
+    </div>
+    <div class="search">
+      <select><option>All</option></select>
+      <input type="text" placeholder="Search Amazon.in">
+      <button>⌕</button>
+    </div>
+    <div class="language">EN ▾</div>
+    <div class="account"><small>Hello, sign in</small><strong>Account & Lists ▾</strong></div>
+    <div class="orders"><small>Returns</small><strong>& Orders</strong></div>
+    <div class="cart">🛒 <b>Cart</b></div>
+  </header>
 
-  <!-- Amazon-style navigation bar: CSS is completed for this section -->
   <nav class="nav-bar">
-    <div class="nav-menu">☰ <strong>All</strong></div>
-    <a href="#">Fresh</a>
-    <a href="#">MX Player</a>
-    <a href="#">Sell</a>
-    <a href="#">Best Sellers</a>
-    <a href="#">Today's Deals</a>
-    <a href="#">Mobiles</a>
-    <a href="#">Prime</a>
-    <a href="#">Customer Service</a>
-    <a href="#">Electronics</a>
-    <a href="#">Fashion</a>
+    <div class="menu">☰ <b>All</b></div>
+    <a>Fresh</a><a>MX Player</a><a>Sell</a><a>Best Sellers</a>
+    <a>Today's Deals</a><a>Mobiles</a><a>Prime</a><a>Customer Service</a>
+    <a>Electronics</a><a>Fashion</a>
   </nav>
 
-  <!-- Halfway-done page: remaining sections intentionally left unfinished -->
   <main>
-    <section class="unfinished">
-      <h1>Amazon Clone</h1>
-      <p>Page is intentionally halfway completed.</p>
-      <p>The navigation bar above is fully styled. The remaining page sections have not been implemented yet.</p>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Amazon</h1>
+        <p>Shop millions of products with great deals and fast delivery.</p>
+        <button>Start shopping</button>
+      </div>
+    </section>
+
+    <section class="product-grid">
+      <article class="card">
+        <h2>Appliances for your home</h2>
+        <div class="quad">
+          <div><div class="fake-image">TV</div><span>Televisions</span></div>
+          <div><div class="fake-image">AC</div><span>Air conditioners</span></div>
+          <div><div class="fake-image">WM</div><span>Washing machines</span></div>
+          <div><div class="fake-image">RF</div><span>Refrigerators</span></div>
+        </div>
+        <a class="more">See more</a>
+      </article>
+
+      <article class="card">
+        <h2>Revamp your home</h2>
+        <div class="quad">
+          <div><div class="fake-image">🛋</div><span>Cushion covers</span></div>
+          <div><div class="fake-image">💡</div><span>Lighting</span></div>
+          <div><div class="fake-image">🪴</div><span>Decor</span></div>
+          <div><div class="fake-image">🪑</div><span>Furniture</span></div>
+        </div>
+        <a class="more">Explore all</a>
+      </article>
+
+      <article class="card">
+        <h2>Starting ₹149 | Headphones</h2>
+        <div class="quad">
+          <div><div class="fake-image">🎧</div><span>Boat</span></div>
+          <div><div class="fake-image">🎵</div><span>Noise</span></div>
+          <div><div class="fake-image">🎧</div><span>JBL</span></div>
+          <div><div class="fake-image">🔊</div><span>More brands</span></div>
+        </div>
+        <a class="more">See all offers</a>
+      </article>
+
+      <article class="card">
+        <h2>Up to 60% off | Styles</h2>
+        <div class="quad">
+          <div><div class="fake-image">👕</div><span>Men's clothing</span></div>
+          <div><div class="fake-image">👗</div><span>Women's clothing</span></div>
+          <div><div class="fake-image">👟</div><span>Footwear</span></div>
+          <div><div class="fake-image">⌚</div><span>Watches</span></div>
+        </div>
+        <a class="more">Shop now</a>
+      </article>
+    </section>
+
+    <section class="wide-section">
+      <div class="section-heading">
+        <h2>Today's Deals</h2><a>See all deals</a>
+      </div>
+      <div class="deal-row">
+        <div class="deal"><div class="deal-image">SMART<br>PHONE</div><b>Up to 40% off</b><span>Limited time deal</span></div>
+        <div class="deal"><div class="deal-image">LAPTOP</div><b>Up to 35% off</b><span>Great savings</span></div>
+        <div class="deal"><div class="deal-image">SHOES</div><b>Up to 60% off</b><span>Top brands</span></div>
+        <div class="deal"><div class="deal-image">WATCH</div><b>Up to 50% off</b><span>Best sellers</span></div>
+        <div class="deal"><div class="deal-image">CAMERA</div><b>Up to 30% off</b><span>Deal of the day</span></div>
+      </div>
+    </section>
+
+    <section class="product-grid">
+      <article class="card single">
+        <h2>Gaming accessories</h2>
+        <div class="large-fake">KEYBOARD + MOUSE<br>HEADSET + CONTROLLER</div>
+        <a class="more">See more</a>
+      </article>
+      <article class="card single">
+        <h2>Home & kitchen essentials</h2>
+        <div class="large-fake">HOME ESSENTIALS</div>
+        <a class="more">Shop now</a>
+      </article>
+      <article class="card single">
+        <h2>Books worth reading</h2>
+        <div class="large-fake">BOOKS<br>NEW RELEASES</div>
+        <a class="more">Browse books</a>
+      </article>
+      <article class="card single">
+        <h2>Beauty & personal care</h2>
+        <div class="large-fake">BEAUTY<br>PERSONAL CARE</div>
+        <a class="more">Discover more</a>
+      </article>
     </section>
   </main>
 
+  <footer>
+    <div class="back-top">Back to top</div>
+    <div class="footer-main">
+      <div><h3>Get to Know Us</h3><a>About Amazon</a><a>Careers</a><a>Press Releases</a><a>Amazon Science</a></div>
+      <div><h3>Connect with Us</h3><a>Facebook</a><a>Twitter</a><a>Instagram</a></div>
+      <div><h3>Make Money with Us</h3><a>Sell on Amazon</a><a>Protect and Build Your Brand</a><a>Become an Affiliate</a><a>Advertise Your Products</a></div>
+      <div><h3>Let Us Help You</h3><a>Your Account</a><a>Returns Centre</a><a>100% Purchase Protection</a><a>Help</a></div>
+    </div>
+    <div class="footer-bottom">amazon.in</div>
+  </footer>
 </body>
 </html>
