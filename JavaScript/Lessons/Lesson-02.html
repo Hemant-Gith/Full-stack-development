@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 5 - Variables</title>
+</head>
+
+<body>
+
+    <h2>Cart Quantity</h2>
+
+    <button onclick="updateCart(-1)">Remove from cart</button>
+
+    <button onclick="updateCart(-2)">-2</button>
+    <button onclick="updateCart(-3)">-3</button>
+
+    <button onclick="updateCart(4)">+4</button>
+    <button onclick="updateCart(5)">+5</button>
+
+    <button onclick="updateCart(1)">+1</button>
+
+    <p>Cart Quantity: <span id="cartQuantity">0</span></p>
+
+
+    <script>
+
+        // =========================
+        // 5a
+        // =========================
+
+        let name = "Hemant";
+
+
+        // =========================
+        // 5b
+        // =========================
+
+        console.log(`My name is: ${name}`);
+
+
+        // =========================
+        // 5c
+        // =========================
+
+        let coffee = 5;
+        let bagels = 2 * 3;
+        let soup = 9;
+
+        let cost = coffee + bagels + soup;
+
+
+        // =========================
+        // 5d
+        // =========================
+
+        console.log(`Cost of food: $${cost}`);
+
+
+        // =========================
+        // 5e
+        // =========================
+
+        let tax = cost * 0.1;
+
+
+        // =========================
+        // 5f
+        // =========================
+
+        console.log(`Tax: $${tax}`);
+
+
+        // =========================
+        // 5g
+        // =========================
+
+        let totalCost = cost + tax;
+
+        console.log(`Total cost: $${totalCost}`);
+
+
+        // =========================
+        // 5h - 5k
+        // Cart Quantity
+        // =========================
+
+        let cartQuantity = 0;
+
+        function updateCart(amount) {
+
+            // 5h: +4 and +5
+            // 5i: Remove from cart (-1)
+            // 5j: -2 and -3
+            // 5k: using += and -=
+
+            if (amount > 0) {
+                cartQuantity += amount;
+            } else {
+                cartQuantity -= Math.abs(amount);
+            }
+
+            document.getElementById("cartQuantity").innerText = cartQuantity;
+
+            console.log(`Cart quantity: ${cartQuantity}`);
+        }
+
+    </script>
+
+</body>
+</html>
