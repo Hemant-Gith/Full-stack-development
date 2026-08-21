@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <!-- Calculator display -->
+    <p id="display">0</p>
+
+    <!-- Row 1 -->
+    <p>
+        <button onclick="addToCalculation('1')">1</button>
+        <button onclick="addToCalculation('2')">2</button>
+        <button onclick="addToCalculation('3')">3</button>
+        <button onclick="addToCalculation(' + ')">+</button>
+    </p>
+
+    <!-- Row 2 -->
+    <p>
+        <button onclick="addToCalculation('4')">4</button>
+        <button onclick="addToCalculation('5')">5</button>
+        <button onclick="addToCalculation('6')">6</button>
+        <button onclick="addToCalculation(' - ')">-</button>
+    </p>
+
+    <!-- Row 3 -->
+    <p>
+        <button onclick="addToCalculation('7')">7</button>
+        <button onclick="addToCalculation('8')">8</button>
+        <button onclick="addToCalculation('9')">9</button>
+        <button onclick="addToCalculation(' * ')">*</button>
+    </p>
+
+    <!-- Row 4 -->
+    <p>
+        <button onclick="addToCalculation('0')">0</button>
+        <button onclick="addToCalculation('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="addToCalculation(' / ')">/</button>
+    </p>
+
+    <!-- Clear -->
+    <p>
+        <button onclick="clearCalculation()">Clear</button>
+    </p>
+
+
+    <script>
+
+        // 5n
+        // This variable stores the calculation.
+        // Example: "1 + 2 + 3"
+
+        let calculation = '';
+
+
+        // 5o, 5p
+        // Add a value to the calculation
+
+        function addToCalculation(value) {
+
+            calculation += value;
+
+            console.log(calculation);
+
+            document.getElementById('display').innerText = calculation;
+        }
+
+
+        // 5q
+        // Calculate the result
+
+        function calculate() {
+
+            calculation = eval(calculation);
+
+            console.log(calculation);
+
+            document.getElementById('display').innerText = calculation;
+        }
+
+
+        // Clear calculator
+
+        function clearCalculation() {
+
+            calculation = '';
+
+            console.log(calculation);
+
+            document.getElementById('display').innerText = '0';
+        }
+
+    </script>
+
+</body>
+</html>

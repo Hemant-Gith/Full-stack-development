@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 - Numbers and Math</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .result {
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: #f4f4f4;
+            border-radius: 5px;
+        }
+
+        .summary {
+            margin-top: 30px;
+            padding: 20px;
+            background: #eee;
+            border-radius: 8px;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lesson 2: Numbers and Math</h1>
+
+    <div id="output"></div>
+
+    <script>
+
+        const output = document.getElementById("output");
+
+        // Helper function to display results
+        function show(text, className = "result") {
+            output.innerHTML += `<div class="${className}">${text}</div>`;
+        }
+
+
+        // ========================================
+        // Lesson 2
+        // ========================================
+
+        show("<h2>Basic Math</h2>");
+
+        // 2a
+        let soup = 10;
+        let burgers = 3 * 8;
+        let iceCream = 5;
+
+        let orderCost = soup + burgers + iceCream;
+
+        show("2a - Order cost: $" + orderCost);
+
+
+        // 2b
+        let people = 3;
+        let costPerPerson = orderCost / people;
+
+        show("2b - Cost per person: $" + costPerPerson);
+
+
+        // 2c
+        let toaster = 18.50;
+        let shirts = 2 * 7.50;
+
+        let total = toaster + shirts;
+
+        show("2c - Total cost: $" + total);
+
+
+        // 2d
+        let tax10 = total * 0.10;
+
+        show("2d - 10% tax: $" + tax10);
+
+
+        // 2e
+        let tax20 = total * 0.20;
+
+        show("2e - 20% tax: $" + tax20);
+
+
+        // ========================================
+        // Amazon Project Exercises
+        // ========================================
+
+        show("<h2>Amazon Project</h2>");
+
+        // Products in cents
+        let basketballCents = 2095;
+        let tshirtCents = 2698;
+        let toasterCents = 1899;
+
+        let productCostCents =
+            basketballCents +
+            tshirtCents +
+            toasterCents;
+
+        show("2f - Product cost: $" + (productCostCents / 100).toFixed(2));
+
+
+        // 2g
+        let shippingCents = 499;
+
+        let totalBeforeTaxCents =
+            productCostCents +
+            shippingCents;
+
+        show("2g - Total before tax: $" +
+            (totalBeforeTaxCents / 100).toFixed(2));
+
+
+        // 2h
+        let taxCents = Math.round(totalBeforeTaxCents * 0.10);
+
+        show("2h - Estimated tax: $" +
+            (taxCents / 100).toFixed(2));
+
+
+        // 2i
+        let orderTotalCents =
+            totalBeforeTaxCents +
+            taxCents;
+
+        show("2i - Order total: $" +
+            (orderTotalCents / 100).toFixed(2));
+
+
+        // ========================================
+        // Final Order Summary
+        // ========================================
+
+        output.innerHTML += `
+            <div class="summary">
+                <h2>ORDER SUMMARY</h2>
+
+                <p>Items: 3</p>
+
+                <p>
+                    Products:
+                    $${(productCostCents / 100).toFixed(2)}
+                </p>
+
+                <p>
+                    Shipping & handling:
+                    $${(shippingCents / 100).toFixed(2)}
+                </p>
+
+                <p>
+                    Total before tax:
+                    $${(totalBeforeTaxCents / 100).toFixed(2)}
+                </p>
+
+                <p>
+                    Estimated tax (10%):
+                    $${(taxCents / 100).toFixed(2)}
+                </p>
+
+                <p class="total">
+                    Order total:
+                    $${(orderTotalCents / 100).toFixed(2)}
+                </p>
+            </div>
+        `;
+
+    </script>
+
+</body>
+</html>
