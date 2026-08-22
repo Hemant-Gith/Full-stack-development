@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6 - Booleans and If Statements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #cart {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lesson 6 - Booleans and If-Statements</h1>
+
+    <h2>Cart Quantity</h2>
+
+    <div id="cart">
+        Cart Quantity: <span id="quantity">0</span>
+    </div>
+
+    <div>
+        <button onclick="addToCart(1)">Add to Cart</button>
+        <button onclick="addToCart(2)">+2</button>
+        <button onclick="addToCart(3)">+3</button>
+
+        <br>
+
+        <button onclick="removeFromCart(1)">Remove from cart</button>
+        <button onclick="removeFromCart(2)">-2</button>
+        <button onclick="removeFromCart(3)">-3</button>
+
+        <br>
+
+        <button onclick="resetCart()">Reset Cart</button>
+    </div>
+
+
+    <script>
+
+       
+        // 6a - Good morning / afternoon / night
+
+        let hour = new Date().getHours();
+
+        if (hour >= 6 && hour <= 12) {
+            console.log('Good morning!');
+        }
+        else if (hour >= 13 && hour <= 17) {
+            console.log('Good afternoon!');
+        }
+        else {
+            console.log('Good night!');
+        }
+
+
+        // 6b - Change hour to test different messages
+
+        // Try changing this value:
+        // let testHour = 8;
+        // let testHour = 15;
+        // let testHour = 22;
+
+        let testHour = 8;
+
+        if (testHour >= 6 && testHour <= 12) {
+            console.log('6b:', 'Good morning!');
+        }
+        else if (testHour >= 13 && testHour <= 17) {
+            console.log('6b:', 'Good afternoon!');
+        }
+        else {
+            console.log('6b:', 'Good night!');
+        }
+
+
+        // 6c - Add name
+
+
+        const name = 'Hemant';
+
+        if (hour >= 6 && hour <= 12) {
+            console.log(`Good morning ${name}!`);
+        }
+        else if (hour >= 13 && hour <= 17) {
+            console.log(`Good afternoon ${name}!`);
+        }
+        else {
+            console.log(`Good night ${name}!`);
+        }
+
+
+        // 6d - Age discount
+        // Children: 6 years and younger
+        // Seniors: 65 years and older
+
+        let age = 20;
+
+        if (age <= 6 || age >= 65) {
+            console.log('Discount');
+        }
+        else {
+            console.log('No discount');
+        }
+
+
+        // 6e - Discount only when NOT a holiday
+
+        const isHoliday = true;
+
+        if ((age <= 6 || age >= 65) && !isHoliday) {
+            console.log('Discount');
+        }
+        else {
+            console.log('No discount');
+        }
+
+
+        // 6f - Generate random number
+
+        const randomNumber = Math.random();
+
+        console.log('Random number:', randomNumber);
+
+
+        // 6g - Coin flip
+
+        if (randomNumber < 0.5) {
+            console.log('heads');
+        }
+        else {
+            console.log('tails');
+        }
+
+
+        // 6h - Save result in variable
+
+        let result;
+
+        if (randomNumber < 0.5) {
+            result = 'heads';
+        }
+        else {
+            result = 'tails';
+        }
+
+        console.log('Result:', result);
+
+
+        // 6i - Guess the result
+
+        const guess = 'heads';
+
+        if (guess === result) {
+            console.log('You win!');
+        }
+        else {
+            console.log('You lose!');
+        }
+
+
+        // 6j - Ternary operator
+
+        const result2 = Math.random() < 0.5 ? 'heads' : 'tails';
+
+        const guess2 = 'heads';
+
+        console.log(
+            guess2 === result2
+                ? 'You win!'
+                : 'You lose!'
+        );
+
+
+        // 6k - Cart maximum quantity = 10
+
+        let cartQuantity = 0;
+
+        function addToCart(amount) {
+
+            if (cartQuantity + amount > 10) {
+                alert('The cart is full');
+            }
+            else {
+                cartQuantity += amount;
+
+                console.log('Cart quantity:', cartQuantity);
+
+                updateCartDisplay();
+            }
+        }
+
+
+        // 6l - Don't allow cart quantity below 0
+
+        function removeFromCart(amount) {
+
+            if (cartQuantity - amount < 0) {
+                alert('Not enough items in the cart');
+            }
+            else {
+                cartQuantity -= amount;
+
+                console.log('Cart quantity:', cartQuantity);
+
+                updateCartDisplay();
+            }
+        }
+
+
+        // Display cart quantity on webpage
+
+        function updateCartDisplay() {
+            document.getElementById('quantity').textContent = cartQuantity;
+        }
+
+
+        // Reset cart
+
+        function resetCart() {
+            cartQuantity = 0;
+
+            console.log('Cart quantity:', cartQuantity);
+
+            updateCartDisplay();
+        }
+
+    </script>
+
+</body>
+</html>
