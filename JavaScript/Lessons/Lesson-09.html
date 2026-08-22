@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 9 - DOM</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            margin: 4px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .calculator {
+            margin-top: 10px;
+        }
+
+        #calculation {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lesson 9 - Document Object Model (DOM)</h1>
+
+
+    <!-- =====================================================
+         9a
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9a</h2>
+
+        <button>9a</button>
+
+    </div>
+
+
+    <!-- =====================================================
+         9b
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9b</h2>
+
+        <button>9a</button>
+
+        <button class="button-9b">
+            9b
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         9c
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9c</h2>
+
+        <button onclick="chooseSide('heads')">
+            heads
+        </button>
+
+        <button onclick="chooseSide('tails')">
+            tails
+        </button>
+
+        <p class="choice-result"></p>
+
+    </div>
+
+
+    <!-- =====================================================
+         9d / 9e / 9f
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9d / 9e / 9f</h2>
+
+        <input
+            class="name-input"
+            placeholder="Name"
+            onkeydown="handleNameKeydown(event)"
+        >
+
+        <button onclick="displayName()">
+            Submit
+        </button>
+
+        <p class="name-result"></p>
+
+    </div>
+
+
+    <!-- =====================================================
+         9g
+         Amazon Shipping Calculator
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9g - Shipping Calculator</h2>
+
+        <input
+            class="shipping-input"
+            type="number"
+            placeholder="Cost"
+            step="0.01"
+        >
+
+        <button onclick="calculateShipping()">
+            Calculate
+        </button>
+
+        <p class="shipping-result"></p>
+
+    </div>
+
+
+    <!-- =====================================================
+         9h
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9h - Live Text</h2>
+
+        <input
+            class="live-input"
+            placeholder="Type something"
+            onkeyup="updateLiveText()"
+        >
+
+        <p class="live-result"></p>
+
+    </div>
+
+
+    <!-- =====================================================
+         9i
+         Cart Quantity
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9i - Cart Quantity</h2>
+
+        <p class="cart-quantity">
+            Cart quantity: 0
+        </p>
+
+        <button onclick="updateCartQuantity(1)">
+            Add to Cart
+        </button>
+
+        <button onclick="updateCartQuantity(2)">
+            +2
+        </button>
+
+        <button onclick="updateCartQuantity(3)">
+            +3
+        </button>
+
+        <button onclick="updateCartQuantity(4)">
+            +4
+        </button>
+
+        <button onclick="updateCartQuantity(5)">
+            +5
+        </button>
+
+        <br>
+
+        <button onclick="updateCartQuantity(-1)">
+            Remove from cart
+        </button>
+
+        <button onclick="updateCartQuantity(-2)">
+            -2
+        </button>
+
+        <button onclick="updateCartQuantity(-3)">
+            -3
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         9j
+         Calculator
+         ===================================================== -->
+
+    <div class="section">
+
+        <h2>9j - Calculator</h2>
+
+        <div class="calculator">
+
+            <div id="calculation">
+                0
+            </div>
+
+            <button onclick="updateCalculation('1')">
+                1
+            </button>
+
+            <button onclick="updateCalculation('2')">
+                2
+            </button>
+
+            <button onclick="updateCalculation('3')">
+                3
+            </button>
+
+            <button onclick="updateCalculation(' + ')">
+                +
+            </button>
+
+            <br>
+
+            <button onclick="updateCalculation('4')">
+                4
+            </button>
+
+            <button onclick="updateCalculation('5')">
+                5
+            </button>
+
+            <button onclick="updateCalculation('6')">
+                6
+            </button>
+
+            <button onclick="updateCalculation(' - ')">
+                -
+            </button>
+
+            <br>
+
+            <button onclick="updateCalculation('7')">
+                7
+            </button>
+
+            <button onclick="updateCalculation('8')">
+                8
+            </button>
+
+            <button onclick="updateCalculation('9')">
+                9
+            </button>
+
+            <button onclick="updateCalculation(' * ')">
+                *
+            </button>
+
+            <br>
+
+            <button onclick="updateCalculation('0')">
+                0
+            </button>
+
+            <button onclick="updateCalculation(' / ')">
+                /
+            </button>
+
+            <button onclick="calculateResult()">
+                =
+            </button>
+
+            <button onclick="clearCalculation()">
+                Clear
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+        // 9a
+        // document.querySelector()
+
+        const button9a = document.querySelector('.section button');
+
+        console.log('9a:', button9a);
+
+
+        // 9b
+
+        const button9b = document.querySelector('.button-9b');
+
+        button9b.innerHTML = '9b done!';
+
+
+        // 9c
+        // Heads / Tails
+
+        function chooseSide(choice) {
+
+            const result = document.querySelector('.choice-result');
+
+            result.innerHTML = `You chose: ${choice}`;
+
+        }
+
+
+        // 9d
+        // Get text from input
+
+        function displayName() {
+
+            const input = document.querySelector('.name-input');
+
+            const text = input.value;
+
+            const result = document.querySelector('.name-result');
+
+            result.innerHTML = `Your name is: ${text}`;
+
+        }
+
+
+        // 9e
+        // Pressing Enter
+
+        function handleNameKeydown(event) {
+
+            if (event.key === 'Enter') {
+
+                displayName();
+
+            }
+
+        }
+
+
+        // 9f
+        // Function reuse
+        //
+        // displayName() is already being reused by:
+        //
+        // 1. Submit button
+        // 2. Enter key
+
+
+        // 9g
+        // Amazon Shipping Calculator
+
+        function calculateShipping() {
+
+            const input =
+                document.querySelector('.shipping-input');
+
+            let cost = Number(input.value);
+
+
+            // Amazon charges $10 shipping
+            // if the order is less than $40.
+
+            if (cost < 40) {
+
+                cost += 10;
+
+            }
+
+
+            // FIX for floating point issue:
+            //
+            // JavaScript may produce:
+            //
+            // 7.99 + 10
+            // 17.990000000000002
+            //
+            // Math.round() fixes the extra floating point digits.
+
+            cost = Math.round(cost * 100) / 100;
+
+
+            const result =
+                document.querySelector('.shipping-result');
+
+            result.innerHTML = `$${cost}`;
+
+        }
+
+
+        // 9h
+        // onkeyup
+
+        function updateLiveText() {
+
+            const input =
+                document.querySelector('.live-input');
+
+            const result =
+                document.querySelector('.live-result');
+
+            result.innerHTML = input.value;
+
+        }
+
+
+        // 9i
+        // Cart Quantity
+
+        let cartQuantity = 0;
+
+
+        function updateCartQuantity(change) {
+
+            // Maximum quantity = 10
+
+            if (cartQuantity + change > 10) {
+
+                alert('The cart is full');
+
+                return;
+
+            }
+
+
+            // Minimum quantity = 0
+
+            if (cartQuantity + change < 0) {
+
+                alert('Not enough items in the cart');
+
+                return;
+
+            }
+
+
+            cartQuantity += change;
+
+
+            updateCartDisplay();
+
+        }
+
+
+        function updateCartDisplay() {
+
+            const quantity =
+                document.querySelector('.cart-quantity');
+
+            quantity.innerHTML =
+                `Cart quantity: ${cartQuantity}`;
+
+        }
+
+
+        // Display quantity when page first loads.
+
+        updateCartDisplay();
+
+
+        // 9j
+        // Calculator + DOM + localStorage
+
+
+        // Load previous calculation.
+
+        let calculation =
+            localStorage.getItem('calculation') || '';
+
+
+        // Display saved calculation when page loads.
+
+        updateCalculationDisplay();
+
+
+        function updateCalculation(value) {
+
+            calculation += value;
+
+
+            // Save to localStorage
+
+            localStorage.setItem(
+                'calculation',
+                calculation
+            );
+
+
+            // Update webpage
+
+            updateCalculationDisplay();
+
+        }
+
+
+        function updateCalculationDisplay() {
+
+            const display =
+                document.querySelector('#calculation');
+
+
+            if (calculation === '') {
+
+                display.innerHTML = '0';
+
+            }
+            else {
+
+                display.innerHTML = calculation;
+
+            }
+
+        }
+
+
+        function calculateResult() {
+
+            try {
+
+                calculation = eval(calculation);
+
+
+                // Save result
+
+                localStorage.setItem(
+                    'calculation',
+                    calculation
+                );
+
+
+                // Display result
+
+                updateCalculationDisplay();
+
+            }
+            catch (error) {
+
+                alert('Invalid calculation');
+
+                calculation = '';
+
+                localStorage.setItem(
+                    'calculation',
+                    calculation
+                );
+
+                updateCalculationDisplay();
+
+            }
+
+        }
+
+
+        function clearCalculation() {
+
+            calculation = '';
+
+
+            localStorage.setItem(
+                'calculation',
+                calculation
+            );
+
+
+            updateCalculationDisplay();
+
+        }
+
+
+    </script>
+
+</body>
+</html>
