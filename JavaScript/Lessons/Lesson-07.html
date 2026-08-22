@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7 - Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        #calculator {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        #cart {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lesson 7 - Functions</h1>
+
+    <!-- =====================================================
+         7J - CALCULATOR
+         ===================================================== -->
+
+    <div class="section">
+        <h2>Calculator - 7j</h2>
+
+        <div id="calculator">
+            Calculation: <span id="calculation">0</span>
+        </div>
+
+        <button onclick="updateCalculation('1')">1</button>
+        <button onclick="updateCalculation('2')">2</button>
+        <button onclick="updateCalculation('3')">3</button>
+        <button onclick="updateCalculation(' + ')">+</button>
+
+        <br>
+
+        <button onclick="updateCalculation('4')">4</button>
+        <button onclick="updateCalculation('5')">5</button>
+        <button onclick="updateCalculation('6')">6</button>
+        <button onclick="updateCalculation(' - ')">-</button>
+
+        <br>
+
+        <button onclick="updateCalculation('7')">7</button>
+        <button onclick="updateCalculation('8')">8</button>
+        <button onclick="updateCalculation('9')">9</button>
+        <button onclick="updateCalculation(' * ')">*</button>
+
+        <br>
+
+        <button onclick="updateCalculation('0')">0</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="updateCalculation(' / ')">/</button>
+        <button onclick="clearCalculation()">Clear</button>
+    </div>
+
+
+    <!-- =====================================================
+         7K / 7L - CART QUANTITY
+         ===================================================== -->
+
+    <div class="section">
+        <h2>Cart Quantity - 7k / 7l</h2>
+
+        <div id="cart">
+            Cart Quantity: <span id="quantity">0</span>
+        </div>
+
+        <button onclick="updateCartQuantity(1)">Add to Cart</button>
+        <button onclick="updateCartQuantity(2)">+2</button>
+        <button onclick="updateCartQuantity(3)">+3</button>
+
+        <br>
+
+        <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+        <button onclick="updateCartQuantity(-2)">-2</button>
+        <button onclick="updateCartQuantity(-3)">-3</button>
+
+        <br>
+
+        <button onclick="updateCartQuantity(0)">Reset Cart</button>
+    </div>
+
+
+    <script>
+
+        // 7a - Basic function
+
+        function greet() {
+            console.log('Hello!');
+        }
+
+        greet();
+        greet();
+        greet();
+
+
+        // 7b - Function parameter
+
+        function greetName(name) {
+            console.log(`Hello ${name}!`);
+        }
+
+        greetName('Simon');
+        greetName('Hemant');
+        greetName('John');
+
+
+        // 7c - Undefined parameter
+
+        function greetPerson(name) {
+
+            if (!name) {
+                console.log('Hi there!');
+                return;
+            }
+
+            console.log(`Hello ${name}!`);
+        }
+
+        greetPerson('Simon');
+        greetPerson('Hemant');
+        greetPerson();
+
+
+        // 7d - Celsius → Fahrenheit
+
+        function convertToFahrenheit(celsius) {
+
+            return (celsius * 9 / 5) + 32;
+
+        }
+
+        console.log(
+            '7d:',
+            convertToFahrenheit(25)
+        );
+
+
+        // 7e - Fahrenheit → Celsius
+
+        function convertToCelsius(fahrenheit) {
+
+            return (fahrenheit - 32) * 5 / 9;
+
+        }
+
+        console.log(
+            '7e:',
+            convertToCelsius(86)
+        );
+
+
+        // 7f - Temperature converter
+
+        function convertTemperature(degrees, unit) {
+
+            if (unit === 'C') {
+
+                const fahrenheit = convertToFahrenheit(degrees);
+
+                return `${fahrenheit}F`;
+
+            }
+            else if (unit === 'F') {
+
+                const celsius = convertToCelsius(degrees);
+
+                return `${celsius}C`;
+
+            }
+
+        }
+
+        console.log(
+            '7f:',
+            convertTemperature(25, 'C')
+        );
+
+        console.log(
+            '7f:',
+            convertTemperature(86, 'F')
+        );
+
+
+        // 7g - km ↔ miles
+
+        function convertLength(length, from, to) {
+
+            if (from === 'miles' && to === 'km') {
+
+                return `${length * 1.6} km`;
+
+            }
+            else if (from === 'km' && to === 'miles') {
+
+                return `${length / 1.6} miles`;
+
+            }
+            else if (from === to) {
+
+                return `${length} ${to}`;
+
+            }
+
+        }
+
+        console.log(
+            '7g:',
+            convertLength(50, 'miles', 'km')
+        );
+
+        console.log(
+            '7g:',
+            convertLength(32, 'km', 'miles')
+        );
+
+        console.log(
+            '7g:',
+            convertLength(50, 'km', 'km')
+        );
+
+
+        // 7h - km, miles and feet
+
+        function convertLengthAdvanced(length, from, to) {
+
+            // miles → km
+            if (from === 'miles' && to === 'km') {
+
+                return `${length * 1.6} km`;
+
+            }
+
+            // km → miles
+            else if (from === 'km' && to === 'miles') {
+
+                return `${length / 1.6} miles`;
+
+            }
+
+            // miles → feet
+            else if (from === 'miles' && to === 'ft') {
+
+                return `${length * 5280} ft`;
+
+            }
+
+            // feet → miles
+            else if (from === 'ft' && to === 'miles') {
+
+                return `${length / 5280} miles`;
+
+            }
+
+            // km → feet
+            else if (from === 'km' && to === 'ft') {
+
+                return `${length * 3281} ft`;
+
+            }
+
+            // feet → km
+            else if (from === 'ft' && to === 'km') {
+
+                return `${length / 3281} km`;
+
+            }
+
+            // Same unit
+            else if (from === to) {
+
+                return `${length} ${to}`;
+
+            }
+
+        }
+
+        console.log(
+            '7h:',
+            convertLengthAdvanced(5, 'miles', 'km')
+        );
+
+        console.log(
+            '7h:',
+            convertLengthAdvanced(5, 'miles', 'ft')
+        );
+
+        console.log(
+            '7h:',
+            convertLengthAdvanced(5, 'km', 'ft')
+        );
+
+
+        // 7i - Invalid units
+
+        function convertLengthFinal(length, from, to) {
+
+            // Check whether FROM unit is valid
+            if (
+                from !== 'km' &&
+                from !== 'miles' &&
+                from !== 'ft'
+            ) {
+                return `Invalid unit: ${from}`;
+            }
+
+            // Check whether TO unit is valid
+            if (
+                to !== 'km' &&
+                to !== 'miles' &&
+                to !== 'ft'
+            ) {
+                return `Invalid unit: ${to}`;
+            }
+
+
+            // Same unit
+            if (from === to) {
+                return `${length} ${to}`;
+            }
+
+
+            // miles → km
+            if (from === 'miles' && to === 'km') {
+                return `${length * 1.6} km`;
+            }
+
+
+            // km → miles
+            if (from === 'km' && to === 'miles') {
+                return `${length / 1.6} miles`;
+            }
+
+
+            // miles → feet
+            if (from === 'miles' && to === 'ft') {
+                return `${length * 5280} ft`;
+            }
+
+
+            // feet → miles
+            if (from === 'ft' && to === 'miles') {
+                return `${length / 5280} miles`;
+            }
+
+
+            // km → feet
+            if (from === 'km' && to === 'ft') {
+                return `${length * 3281} ft`;
+            }
+
+
+            // feet → km
+            if (from === 'ft' && to === 'km') {
+                return `${length / 3281} km`;
+            }
+
+        }
+
+        console.log(
+            '7i:',
+            convertLengthFinal(5, 'lbs', 'lbs')
+        );
+
+
+        // 7j - Calculator
+        //
+        // Instead of repeating the calculation code for every
+        // button, we use one function.
+
+        let calculation = '';
+
+        function updateCalculation(value) {
+
+            calculation += value;
+
+            document.getElementById('calculation').textContent =
+                calculation;
+
+            console.log(calculation);
+        }
+
+
+        function calculateResult() {
+
+            try {
+
+                calculation = eval(calculation);
+
+                document.getElementById('calculation').textContent =
+                    calculation;
+
+                console.log(calculation);
+
+            }
+            catch (error) {
+
+                alert('Invalid calculation');
+
+                calculation = '';
+
+                document.getElementById('calculation').textContent =
+                    '0';
+            }
+        }
+
+
+        function clearCalculation() {
+
+            calculation = '';
+
+            document.getElementById('calculation').textContent =
+                '0';
+        }
+
+
+        // 7k / 7l - Cart Quantity
+
+        let cartQuantity = 0;
+
+
+        // 7k + 7l
+        //
+        // One function handles:
+        // +1
+        // +2
+        // +3
+        // -1
+        // -2
+        // -3
+        //
+        // Maximum = 10
+        // Minimum = 0
+
+        function updateCartQuantity(change) {
+
+            // 7l - Early return
+            if (cartQuantity + change > 10) {
+
+                alert('The cart is full');
+
+                return;
+            }
+
+
+            // 7l - Early return
+            if (cartQuantity + change < 0) {
+
+                alert('Not enough items in the cart');
+
+                return;
+            }
+
+
+            // Update quantity
+            cartQuantity += change;
+
+
+            // Reset button
+            if (change === 0) {
+                cartQuantity = 0;
+            }
+
+
+            console.log(
+                'Cart quantity:',
+                cartQuantity
+            );
+
+
+            document.getElementById('quantity').textContent =
+                cartQuantity;
+        }
+
+    </script>
+
+</body>
+</html>
