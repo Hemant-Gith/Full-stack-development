@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10e - Toggle Buttons</title>
+
+    <style>
+        .toggle-button {
+            background-color: rgb(230, 230, 230);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .is-toggled {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="toggle-button js-button">
+        Gaming
+    </button>
+
+    <button class="toggle-button js-button">
+        Music
+    </button>
+
+    <button class="toggle-button js-button">
+        Tech
+    </button>
+
+    <script>
+        const buttons = document.querySelectorAll('.js-button');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+
+                if (button.classList.contains('is-toggled')) {
+                    button.classList.remove('is-toggled');
+                } else {
+                    button.classList.add('is-toggled');
+                }
+
+            });
+        });
+    </script>
+
+</body>
+</html>
