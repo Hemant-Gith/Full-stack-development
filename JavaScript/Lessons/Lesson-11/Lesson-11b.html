@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11b - Get Last Value</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .question {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .output {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Lesson 11b - Get Last Value</h1>
+
+        <div class="question">
+            <strong>Exercise:</strong>
+
+            <p>
+                Create a function <code>getLastValue(array)</code>
+                that takes an array and returns the last value in the array.
+            </p>
+
+            <p>
+                <code>getLastValue([1, 20, 22, 24, 5])</code> → 5
+            </p>
+
+            <p>
+                <code>getLastValue(['hi', 'hello', 'good'])</code> → 'good'
+            </p>
+        </div>
+
+        <div class="output">
+            <strong>Output:</strong>
+            <p id="output"></p>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to get the last value of an array
+        function getLastValue(array) {
+            return array[array.length - 1];
+        }
+
+        // Test the function
+        const result1 = getLastValue([1, 20, 22, 24, 5]);
+        const result2 = getLastValue(['hi', 'hello', 'good']);
+
+        // Display the results
+        document.getElementById('output').innerHTML =
+            `getLastValue([1, 20, 22, 24, 5]) → ${result1}<br><br>
+             getLastValue(['hi', 'hello', 'good']) → ${result2}`;
+    </script>
+
+</body>
+</html>
