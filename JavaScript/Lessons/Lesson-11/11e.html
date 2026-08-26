@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>11e - Count Down</title>
+
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial;
+            color: white;
+        }
+
+        .output {
+            font-size: 30px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="output js-output"></p>
+
+    <script>
+        let result = '';
+
+        for (let i = 5; i >= 0; i--) {
+            result += i + ' ';
+        }
+
+        document.querySelector('.js-output').innerHTML = result;
+    </script>
+
+</body>
+</html>
