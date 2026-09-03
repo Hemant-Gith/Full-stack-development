@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+</head>
+<body>
+
+  <h1>Exercise 12i - Advanced Message Counter</h1>
+
+  <button onclick="addMessage();">Add</button>
+  <button onclick="removeMessage();">Remove</button>
+
+  <script>
+    let messages = 2;
+    let isShowingMessages = false;
+
+    setInterval(function () {
+      if (messages > 0) {
+        if (isShowingMessages) {
+          document.title = 'App';
+        } else {
+          document.title = `(${messages}) New messages`;
+        }
+
+        isShowingMessages = !isShowingMessages;
+      } else {
+        document.title = 'App';
+      }
+    }, 1000);
+
+    function addMessage() {
+      messages++;
+    }
+
+    function removeMessage() {
+      if (messages > 0) {
+        messages--;
+      }
+    }
+  </script>
+
+</body>
+</html>

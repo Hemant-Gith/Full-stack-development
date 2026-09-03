@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+</head>
+<body>
+
+  <h1>Exercise 12g - Document Title</h1>
+
+  <script>
+    let isShowingMessages = false;
+
+    setInterval(function () {
+      if (isShowingMessages) {
+        document.title = 'App';
+      } else {
+        document.title = '(2) New messages';
+      }
+
+      isShowingMessages = !isShowingMessages;
+    }, 1000);
+  </script>
+
+</body>
+</html>

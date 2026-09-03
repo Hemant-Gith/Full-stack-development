@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12l</title>
+</head>
+<body>
+
+  <h1>Exercise 12l - Count Positive Numbers</h1>
+  <p>Open the console to see the output.</p>
+
+  <script>
+    function countPositive(nums) {
+      let positiveNumbers = 0;
+
+      nums.forEach(function (num) {
+        if (num > 0) {
+          positiveNumbers++;
+        }
+      });
+
+      return positiveNumbers;
+    }
+
+    console.log(countPositive([1, -3, 5]));
+    console.log(countPositive([-2, 3, 5, 7, 10]));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12p</title>
+</head>
+<body>
+
+  <h1>Exercise 12p - Arrow Functions</h1>
+
+  <button class="finish-button">Start</button>
+
+  <script>
+    const button = document.querySelector('.finish-button');
+
+    button.addEventListener('click', () => {
+      button.innerHTML = 'Loading...';
+
+      setTimeout(() => {
+        button.innerHTML = 'Finished!';
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>

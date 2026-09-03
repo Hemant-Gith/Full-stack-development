@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12q</title>
+</head>
+<body>
+
+  <h1>Exercise 12q - addEventListener</h1>
+
+  <button class="js-add-to-cart">
+    Add to cart
+  </button>
+
+  <p class="js-message"></p>
+
+  <script>
+    let timeoutId;
+
+    const button = document.querySelector('.js-add-to-cart');
+
+    button.addEventListener('click', () => {
+      const message = document.querySelector('.js-message');
+
+      message.innerHTML = 'Added';
+
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(() => {
+        message.innerHTML = '';
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>

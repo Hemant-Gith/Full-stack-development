@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12o</title>
+</head>
+<body>
+
+  <h1>Exercise 12o - Remove First Two Eggs</h1>
+  <p>Open the console to see the output.</p>
+
+  <script>
+    function removeEgg(foods) {
+      let eggsRemoved = 0;
+
+      return foods.filter(function (food) {
+        if (food === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          return false;
+        }
+
+        return true;
+      });
+    }
+
+    console.log(
+      removeEgg(['egg', 'apple', 'egg', 'egg', 'ham'])
+    );
+  </script>
+
+</body>
+</html>

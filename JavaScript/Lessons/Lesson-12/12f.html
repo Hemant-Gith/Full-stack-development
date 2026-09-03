@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12f</title>
+</head>
+<body>
+
+  <h1>Exercise 12f - Refresh Timer</h1>
+
+  <button onclick="addToCart();">
+    Add to cart
+  </button>
+
+  <p class="message"></p>
+
+  <script>
+    let timeoutId;
+
+    function addToCart() {
+      const message = document.querySelector('.message');
+
+      message.innerHTML = 'Added';
+
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(function () {
+        message.innerHTML = '';
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12n</title>
+</head>
+<body>
+
+  <h1>Exercise 12n - Filter Eggs</h1>
+  <p>Open the console to see the output.</p>
+
+  <script>
+    function removeEgg(foods) {
+      return foods.filter(function (food) {
+        return food !== 'egg';
+      });
+    }
+
+    console.log(
+      removeEgg(['egg', 'apple', 'egg', 'egg', 'ham'])
+    );
+  </script>
+
+</body>
+</html>
