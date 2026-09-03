@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12b</title>
+</head>
+<body>
+
+  <h1>Exercise 12b - runTwice()</h1>
+  <p>Open the browser console to see the output.</p>
+
+  <script>
+    const add = function () {
+      console.log(2 + 3);
+    };
+
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(function () {
+      console.log('12b');
+    });
+
+    runTwice(add);
+  </script>
+
+</body>
+</html>

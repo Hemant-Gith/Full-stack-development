@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12d</title>
+</head>
+<body>
+
+  <h1>Exercise 12d - Loading Button</h1>
+
+  <button onclick="changeText();">
+    Start
+  </button>
+
+  <script>
+    function changeText() {
+      const button = document.querySelector('button');
+
+      button.innerHTML = 'Loading...';
+
+      setTimeout(function () {
+        button.innerHTML = 'Finished!';
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

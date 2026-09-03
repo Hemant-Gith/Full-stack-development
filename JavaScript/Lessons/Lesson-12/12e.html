@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - Exercise 12e</title>
+</head>
+<body>
+
+  <h1>Exercise 12e - Add to Cart</h1>
+
+  <button onclick="addToCart();">
+    Add to cart
+  </button>
+
+  <p class="message"></p>
+
+  <script>
+    function addToCart() {
+      const message = document.querySelector('.message');
+
+      message.innerHTML = 'Added';
+
+      setTimeout(function () {
+        message.innerHTML = '';
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
