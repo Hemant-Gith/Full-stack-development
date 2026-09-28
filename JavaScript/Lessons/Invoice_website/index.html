@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shynex Cares — Billing Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <strong>Shynex Cares</strong>
+          <span>Billing Desk</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item active" href="#dashboard">⌂ <span>Dashboard</span></a>
+        <a class="nav-item" href="#new-invoice">＋ <span>New Invoice</span></a>
+        <a class="nav-item" href="#invoices">▤ <span>Invoices</span></a>
+        <a class="nav-item" href="#customers">♙ <span>Customers</span></a>
+        <a class="nav-item" href="#products">▦ <span>Products</span></a>
+        <a class="nav-item" href="#payments">₹ <span>Payments</span></a>
+        <a class="nav-item" href="#reports">◫ <span>Reports</span></a>
+        <a class="nav-item" href="#settings">⚙ <span>Settings</span></a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="support-card">
+          <small>Need help?</small>
+          <strong>7404098669</strong>
+          <span>WhatsApp Support</span>
+        </div>
+        <div class="user-box">
+          <div class="avatar">TS</div>
+          <div>
+            <strong>Tanmay Saini</strong>
+            <span>Administrator</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">BILLING DESK</p>
+          <h1>Good evening, Tanmay</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" aria-label="Notifications">🔔</button>
+          <button class="primary-btn" onclick="location.hash='new-invoice'">＋ Create Invoice</button>
+        </div>
+      </header>
+
+      <!-- Dashboard -->
+      <section id="dashboard" class="page-section">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Today's Sales</span>
+            <strong>₹12,450</strong>
+            <small class="positive">↑ 12.4% from yesterday</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Invoices</span>
+            <strong>24</strong>
+            <small class="muted">18 paid · 6 pending</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Pending Amount</span>
+            <strong>₹8,920</strong>
+            <small class="warning">6 customers pending</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Products</span>
+            <strong>86</strong>
+            <small class="muted">8 low-stock items</small>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel quick-actions">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">SHORTCUTS</p>
+                <h2>Quick actions</h2>
+              </div>
+            </div>
+            <div class="action-grid">
+              <a href="#new-invoice" class="action-card">
+                <span class="action-icon">＋</span>
+                <strong>New Invoice</strong>
+                <small>Create a bill for a customer</small>
+              </a>
+              <a href="#customers" class="action-card">
+                <span class="action-icon">♙</span>
+                <strong>Add Customer</strong>
+                <small>Save customer information</small>
+              </a>
+              <a href="#products" class="action-card">
+                <span class="action-icon">▦</span>
+                <strong>Add Product</strong>
+                <small>Manage your catalogue</small>
+              </a>
+              <a href="#reports" class="action-card">
+                <span class="action-icon">◫</span>
+                <strong>View Reports</strong>
+                <small>Check sales and payments</small>
+              </a>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">TODAY</p>
+                <h2>Payment summary</h2>
+              </div>
+            </div>
+            <div class="payment-summary">
+              <div><span>Cash</span><strong>₹3,250</strong></div>
+              <div><span>UPI</span><strong>₹6,800</strong></div>
+              <div><span>Bank Transfer</span><strong>₹2,400</strong></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel table-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">RECENT</p>
+              <h2>Recent invoices</h2>
+            </div>
+            <a href="#invoices" class="text-link">View all →</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Customer</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#1047</strong></td>
+                  <td>Harsh · Omnet Broadband Services Pvt Ltd</td>
+                  <td>03 Sep 2026</td>
+                  <td>₹955</td>
+                  <td><span class="badge paid">Paid</span></td>
+                  <td><button class="table-btn">View</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#1046</strong></td>
+                  <td>Rajesh Kumar</td>
+                  <td>03 Sep 2026</td>
+                  <td>₹2,450</td>
+                  <td><span class="badge pending">Pending</span></td>
+                  <td><button class="table-btn">View</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#1045</strong></td>
+                  <td>Sharma Traders</td>
+                  <td>02 Sep 2026</td>
+                  <td>₹4,780</td>
+                  <td><span class="badge paid">Paid</span></td>
+                  <td><button class="table-btn">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- Invoice workspace -->
+      <section id="new-invoice" class="page-section invoice-workspace">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SALES</p>
+            <h2>Create invoice</h2>
+            <p>Enter customer and item details, then review the printable invoice.</p>
+          </div>
+          <div class="top-actions">
+            <button class="secondary-btn">Save Draft</button>
+            <button class="primary-btn">Save & Print</button>
+          </div>
+        </div>
+
+        <div class="invoice-layout">
+          <form class="invoice-form">
+            <section class="form-card">
+              <div class="card-title">
+                <h3>Invoice details</h3>
+                <span class="invoice-number">INV-1048</span>
+              </div>
+              <div class="form-grid">
+                <label>Invoice date
+                  <input type="date" value="2026-09-03">
+                </label>
+                <label>Payment status
+                  <select>
+                    <option>Paid</option>
+                    <option>Pending</option>
+                  </select>
+                </label>
+              </div>
+            </section>
+
+            <section class="form-card">
+              <div class="card-title">
+                <h3>Bill to</h3>
+                <button type="button" class="small-btn">＋ Existing customer</button>
+              </div>
+              <div class="form-grid">
+                <label>Customer name
+                  <input type="text" placeholder="Harsh">
+                </label>
+                <label>Company name
+                  <input type="text" placeholder="Omnet Broadband Services Pvt Ltd">
+                </label>
+                <label>Mobile number
+                  <input type="tel" placeholder="9520657891">
+                </label>
+                <label>Email
+                  <input type="email" placeholder="customer@example.com">
+                </label>
+                <label class="full">Address
+                  <textarea rows="3" placeholder="Customer billing address"></textarea>
+                </label>
+              </div>
+            </section>
+
+            <section class="form-card">
+              <div class="card-title">
+                <h3>Items</h3>
+                <button type="button" class="small-btn">＋ Add item</button>
+              </div>
+              <div class="item-row header-row">
+                <span>Product</span><span>Qty</span><span>Unit price</span><span>Amount</span>
+              </div>
+              <div class="item-row">
+                <input placeholder="500ml Toilet Cleaner">
+                <input type="number" value="3">
+                <input type="number" value="60">
+                <strong>₹180</strong>
+              </div>
+              <div class="item-row">
+                <input placeholder="500ml Glass and Surface Cleaner">
+                <input type="number" value="3">
+                <input type="number" value="60">
+                <strong>₹180</strong>
+              </div>
+              <div class="item-row">
+                <input placeholder="500ml Floor Cleaner (Lavender)">
+                <input type="number" value="3">
+                <input type="number" value="60">
+                <strong>₹180</strong>
+              </div>
+            </section>
+
+            <section class="form-card">
+              <div class="card-title"><h3>Payment</h3></div>
+              <div class="payment-methods">
+                <label><input type="radio" name="payment" checked> Cash</label>
+                <label><input type="radio" name="payment"> UPI</label>
+                <label><input type="radio" name="payment"> Bank Transfer</label>
+                <label><input type="radio" name="payment"> Credit</label>
+              </div>
+            </section>
+          </form>
+
+          <!-- Invoice preview -->
+          <aside class="invoice-preview">
+            <div class="preview-toolbar">
+              <span>Invoice Preview</span>
+              <button class="secondary-btn">🖨 Print</button>
+            </div>
+
+            <div class="invoice-paper">
+              <div class="invoice-header">
+                <div class="logo-area">
+                  <div class="logo-circle">S</div>
+                  <div>
+                    <h2>Shynex</h2>
+                    <p>SAFAI BHI, BACHAT BHI</p>
+                  </div>
+                </div>
+                <div class="company-info">
+                  <h1>SHYNEX CARES</h1>
+                  <p>SAFAI BHI, BACHAT BHI</p>
+                  <strong>PREMIUM CLEANING SOLUTIONS</strong>
+                  <span>1205 GR Dairy, Behind Soni School,<br>Dayanand Nagar, Bahadurgarh,<br>Haryana - 124507</span>
+                </div>
+                <div class="invoice-meta">
+                  <b>INVOICE</b>
+                  <span>Invoice No.: <strong>1048</strong></span>
+                  <span>Date: <strong>03/09/2026</strong></span>
+                </div>
+              </div>
+
+              <div class="invoice-highlights">
+                <span>✓ Premium Quality</span>
+                <span>₹ Honest Pricing</span>
+                <span>◉ Safe & Eco-Friendly</span>
+                <span>◌ Dedicated Support</span>
+              </div>
+
+              <div class="invoice-billing">
+                <div>
+                  <h4>BILL TO</h4>
+                  <p><b>Customer:</b> Harsh</p>
+                  <p><b>Company:</b> Omnet Broadband Services Pvt Ltd</p>
+                  <p><b>Mobile:</b> 9520657891</p>
+                  <p><b>Address:</b> Gali No. 9, Indra Park Palam Colony,<br>Indra Park, Manglapuri, Palam,<br>New Delhi, Delhi, 110045</p>
+                </div>
+                <div>
+                  <h4>PAYMENT DETAILS</h4>
+                  <p>Method: <b>Cash</b></p>
+                  <p>Status: <b class="invoice-paid">Paid</b></p>
+                </div>
+              </div>
+
+              <table class="invoice-table">
+                <thead>
+                  <tr><th>#</th><th>Product</th><th>Qty</th><th>Unit Price</th><th>Amount</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>500ml Toilet Cleaner</td><td>3</td><td>₹60</td><td>₹180</td></tr>
+                  <tr><td>2</td><td>500ml Glass and Surface Cleaner</td><td>3</td><td>₹60</td><td>₹180</td></tr>
+                  <tr><td>3</td><td>500ml Floor Cleaner (Lavender)</td><td>3</td><td>₹60</td><td>₹180</td></tr>
+                  <tr><td>4</td><td>1 Ltr White Phenyl (Pine)</td><td>3</td><td>₹50</td><td>₹150</td></tr>
+                  <tr><td>5</td><td>1 Ltr Lime Phenyl</td><td>3</td><td>₹60</td><td>₹180</td></tr>
+                  <tr><td>6</td><td>5 Ltr White Phenyl (Pine)</td><td>1</td><td>₹300</td><td>₹300</td></tr>
+                </tbody>
+              </table>
+
+              <div class="invoice-bottom">
+                <div class="terms">
+                  <h4>TERMS & CONDITIONS</h4>
+                  <ul>
+                    <li>Goods once sold will not be taken back.</li>
+                    <li>Please check products at the time of delivery.</li>
+                    <li>Prices are subject to change without prior notice.</li>
+                    <li>Bulk orders receive special pricing.</li>
+                  </ul>
+                </div>
+                <div class="totals">
+                  <div><span>Subtotal</span><b>₹1,170</b></div>
+                  <div><span>Discount</span><b>₹215</b></div>
+                  <div><span>Delivery Charges</span><b>₹0</b></div>
+                  <div class="grand-total"><span>GRAND TOTAL</span><b>₹955</b></div>
+                </div>
+              </div>
+
+              <div class="invoice-footer">
+                <div>
+                  <strong>SCAN & PAY</strong>
+                  <div class="fake-qr">▦</div>
+                  <small>UPI ID: paytm.2sr5x1@pty</small>
+                </div>
+                <div>
+                  <strong>BANK DETAILS</strong>
+                  <p>Account: 2601254520024652</p>
+                  <p>IFSC: AUBL0002545</p>
+                  <p>AU Small Finance Bank</p>
+                </div>
+                <div>
+                  <strong>WE ARE ON WHATSAPP!</strong>
+                  <h3>7404098669</h3>
+                  <small>For Orders, Enquiries & Support</small>
+                </div>
+              </div>
+              <div class="thank-you">Thank You! · FOR CHOOSING SHYNEX CARES</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Generic management sections -->
+      <section id="invoices" class="placeholder-section">
+        <div class="section-heading"><div><p class="eyebrow">SALES</p><h2>Invoices</h2><p>Search, filter, print and manage all invoices.</p></div><button class="primary-btn">＋ New Invoice</button></div>
+        <div class="panel empty-panel">Invoice list goes here — filters for date, customer, payment status and amount should be included.</div>
+      </section>
+
+      <section id="customers" class="placeholder-section">
+        <div class="section-heading"><div><p class="eyebrow">CUSTOMERS</p><h2>Customer management</h2><p>Keep customer details ready for faster billing.</p></div><button class="primary-btn">＋ Add Customer</button></div>
+        <div class="panel empty-panel">Customer table: name, company, phone, outstanding amount, last invoice and actions.</div>
+      </section>
+
+      <section id="products" class="placeholder-section">
+        <div class="section-heading"><div><p class="eyebrow">CATALOGUE</p><h2>Products</h2><p>Manage prices, units, stock and product categories.</p></div><button class="primary-btn">＋ Add Product</button></div>
+        <div class="panel empty-panel">Product table: SKU, product name, category, unit, selling price, stock and low-stock status.</div>
+      </section>
+
+      <section id="payments" class="placeholder-section">
+        <div class="section-heading"><div><p class="eyebrow">FINANCE</p><h2>Payments</h2><p>Track cash, UPI, bank transfer and credit payments.</p></div></div>
+        <div class="panel empty-panel">Payment ledger and outstanding customer balances go here.</div>
+      </section>
+
+      <section id="reports" class="placeholder-section">
+        <div class="section-heading"><div><p class="eyebrow">ANALYTICS</p><h2>Reports</h2><p>Understand sales, collections and product performance.</p></div></div>
+        <div class="panel empty-panel">Charts for daily sales, monthly revenue, payment methods, top products and outstanding invoices go here.</div>
+      </section>
+
+      <section id="settings" class="placeholder-section">
+        <div class="section-heading"><div><p class="eyebrow">CONFIGURATION</p><h2>Business settings</h2><p>Configure the information printed on every invoice.</p></div></div>
+        <div class="panel settings-list">
+          <div><strong>Business profile</strong><span>Logo, business name, address, phone, email</span></div>
+          <div><strong>Invoice settings</strong><span>Invoice numbering, tax, discount, terms and footer</span></div>
+          <div><strong>Payment settings</strong><span>UPI QR, bank account, payment methods</span></div>
+          <div><strong>Print settings</strong><span>A4 / thermal printer, margins and invoice layout</span></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
